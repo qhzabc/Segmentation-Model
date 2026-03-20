@@ -1,0 +1,19 @@
+# 基础配置 - 所有其他配置文件继承此配置
+project_root: "."  # 项目根目录
+
+# 路径配置
+data_root: "breast_cancer_data"  # 数据集根目录
+checkpoints_dir: "checkpoints"  # 模型检查点目录
+logs_dir: "logs"  # 训练日志目录
+generated_dir: "generated_images"  # 生成图像目录
+
+# 通用训练参数
+image_size: 256  # 图像尺寸
+batch_size: 12  # 默认批次大小
+num_workers: 8  # 数据加载工作进程数
+log_interval: 5  # 日志记录间隔
+seed: 36  # 随机种子
+
+# 数据配置
+label_mapping_file: "${data_root}/metadata/label_mapping.json"  # 标签映射文件
+test__mapping_file: "${data_root}/tokenizer_dataset/files.json"

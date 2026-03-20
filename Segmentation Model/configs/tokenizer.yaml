@@ -1,0 +1,25 @@
+# 继承基础配置
+_base_: base.yaml
+
+# 模型参数
+model_type: "TiTokTokenizer"
+dim: 69  # 模型维度
+patch_size: 16  # 图像分块大小
+latent_dim: 3
+channels: 44  # 图像通道数
+num_latent_tokens: 256  # 潜在token数量
+codebook_size: 8192  # 码书大小
+enc_depth: 6  # 编码器深度
+dec_depth: 6  # 解码器深度
+
+# 训练参数
+epochs: 15 # 训练轮数
+lr: 0.00005  # 学习率
+save_interval: 2  # 保存间隔
+
+# 数据集路径
+data_dir: "${data_root}/tokenizer_dataset/all_images"  # Tokenizer数据集路径
+
+# 输出路径
+save_dir: "${checkpoints_dir}/tokenizer"  # 模型保存目录
+log_dir: "${logs_dir}/tokenizer"  # 日志目录
